@@ -2,7 +2,7 @@
 Lapres Praktikum Jarkom Modul 5  
 Kelompok E15 : M Iqbal Abdi - 05111940000151
 
-## Prerequisites
+## Sebelum mulai
 **(A)** Buat topologi dulu gan
 ![image](https://user-images.githubusercontent.com/75016595/145771100-f873c4df-884f-4f51-ab32-b5067eb68648.png)
 Keterangan :
