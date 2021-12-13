@@ -22,82 +22,82 @@ netmask 255.255.255.0
 gateway 192.168.122.1
 auto eth1
 iface eth1 inet static
-address 10.29.7.145
+address 192.207.7.145
 netmask 255.255.255.252
 auto eth2
 iface eth2 inet static
-address 10.29.7.149
+address 192.207.7.149
 netmask 255.255.255.252
 ```
 * **Water7**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.146
+address 192.207.7.146
 netmask 255.255.255.252
 auto eth1
 iface eth1 inet static
-address 10.29.7.1
+address 192.207.7.1
 netmask 255.255.255.128
 auto eth2
 iface eth2 inet static
-address 10.29.0.1
+address 192.207.0.1
 netmask 255.255.252.0
 auto eth3
 iface eth3 inet static
-address 10.29.7.129
+address 192.207.7.129
 netmask 255.255.255.248
 ```
 * **Guanhao**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.150
+address 192.207.7.150
 netmask 255.255.255.252
 auto eth1
 iface eth1 inet static
-address 10.29.4.1
+address 192.207.4.1
 netmask 255.255.254.0
 auto eth2
 iface eth2 inet static
-address 10.29.6.1
+address 192.207.6.1
 netmask 255.255.255.0
 auto eth3
 iface eth3 inet static
-address 10.29.7.137
+address 192.207.7.137
 netmask 255.255.255.248
 ```
 * **Jipangu**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.131
+address 192.207.7.131
 netmask 255.255.255.248
-gateway 10.29.7.129
+gateway 192.207.7.129
 ```
 * **Doriki**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.130
+address 192.207.7.130
 netmask 255.255.255.248
-gateway 10.29.7.129
+gateway 192.207.7.129
 ```
 * **Jorge**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.138
+address 192.207.7.138
 netmask 255.255.255.248
-gateway 10.29.7.137
+gateway 192.207.7.137
 ```
 * **Maingate**
 ```
 auto eth0
 iface eth0 inet static
-address 10.29.7.139
+address 192.207.7.139
 netmask 255.255.255.248
-gateway 10.29.7.137
+gateway 192.207.7.137
 ```
 * **Blueno, Cipher, Elena, dan Fukurou**
 ```
@@ -111,7 +111,7 @@ iface eth0 inet dhcp
         <tr>
             <td rowspan = 3><strong>A1</strong></td>
             <td>Network ID</td>
-            <td>10.29.7.128</td>
+            <td>192.207.7.128</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -119,12 +119,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.7.135</td>
+            <td>192.207.7.135</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A2</strong></td>
             <td>Network ID</td>
-            <td>10.29.7.0</td>
+            <td>192.207.7.0</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -132,12 +132,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.7.127</td>
+            <td>192.207.7.127</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A3</strong></td>
             <td>Network ID</td>
-            <td>10.29.0.0</td>
+            <td>192.207.0.0</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -145,12 +145,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.3.255</td>
+            <td>192.207.3.255</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A4</strong></td>
             <td>Network ID</td>
-            <td>10.29.7.144</td>
+            <td>192.207.7.144</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -158,12 +158,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.7.147</td>
+            <td>192.207.7.147</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A5</strong></td>
             <td>Network ID</td>
-            <td>10.29.7.148</td>
+            <td>192.207.7.148</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -171,12 +171,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.7.151</td>
+            <td>192.207.7.151</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A6</strong></td>
             <td>Network ID</td>
-            <td>10.29.4.0</td>
+            <td>192.207.4.0</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -184,11 +184,11 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.5.255</td>
+            <td>192.207.5.255</td>
         </tr><tr>
             <td rowspan = 3><strong>A7</strong></td>
             <td>Network ID</td>
-            <td>10.29.6.0</td>
+            <td>192.207.6.0</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -196,12 +196,12 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.6.255</td>
+            <td>192.207.6.255</td>
         </tr>
         <tr>
             <td rowspan = 3><strong>A8</strong></td>
             <td>Network ID</td>
-            <td>10.29.7.136</td>
+            <td>192.207.7.136</td>
         </tr>
         <tr>
             <td>Netmask</td>
@@ -209,7 +209,7 @@ iface eth0 inet dhcp
         </tr>
         <tr>
             <td>Broadcast Address</td>
-            <td>10.29.7.143</td>
+            <td>192.207.7.143</td>
         </tr>
     </tbody>
 </table>
@@ -217,22 +217,22 @@ iface eth0 inet dhcp
 **(C)** Lalu lakukan routing juga
 * **Foosha**
 ```
-route add -net 10.29.7.128 netmask 255.255.255.248 gw 10.29.7.146
-route add -net 10.29.7.0 netmask 255.255.255.128 gw 10.29.7.146
-route add -net 10.29.0.0 netmask 255.255.252.0 gw 10.29.7.146
-route add -net 10.29.7.144 netmask 255.255.255.252 gw 10.29.7.146
-route add -net 10.29.7.148 netmask 255.255.255.252 gw 10.29.7.150
-route add -net 10.29.4.0 netmask 255.255.254.0 gw 10.29.7.150
-route add -net 10.29.6.0 netmask 255.255.255.0 gw 10.29.7.150
-route add -net 10.29.7.136 netmask 255.255.255.248 gw 10.29.7.150
+route add -net 192.207.7.128 netmask 255.255.255.248 gw 192.207.7.146
+route add -net 192.207.7.0 netmask 255.255.255.128 gw 192.207.7.146
+route add -net 192.207.0.0 netmask 255.255.252.0 gw 192.207.7.146
+route add -net 192.207.7.144 netmask 255.255.255.252 gw 192.207.7.146
+route add -net 192.207.7.148 netmask 255.255.255.252 gw 192.207.7.150
+route add -net 192.207.4.0 netmask 255.255.254.0 gw 192.207.7.150
+route add -net 192.207.6.0 netmask 255.255.255.0 gw 192.207.7.150
+route add -net 192.207.7.136 netmask 255.255.255.248 gw 192.207.7.150
 ```
 * **Water7**
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.29.7.145
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.207.7.145
 ```
 * **Guanhao**
 ```
-route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.29.7.149
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.207.7.149
 ```
 
 **(D)** Set IP client menjadi **DHCP** dengan **Jipangu** sebagai DHCP servernya.
@@ -252,39 +252,39 @@ INTERFACES="eth0"
 
 Kemudian, tambahkan konfigurasi DHCP pada `/etc/dhcp/dhcpd.conf` menjadi seperti ini
 ```
-subnet 10.29.7.128 netmask 255.255.255.248 {
+subnet 192.207.7.128 netmask 255.255.255.248 {
 }
-subnet 10.29.7.0 netmask 255.255.255.128 {
-        range 10.29.7.2 10.29.7.101;
-        option routers 10.29.7.1;
-        option broadcast-address 10.29.7.127;
-        option domain-name-servers 10.29.7.130;
+subnet 192.207.7.0 netmask 255.255.255.128 {
+        range 192.207.7.2 192.207.7.101;
+        option routers 192.207.7.1;
+        option broadcast-address 192.207.7.127;
+        option domain-name-servers 192.207.7.130;
         default-lease-time 360;
         max-lease-time 7200;
 }
-subnet 10.29.0.0 netmask 255.255.252.0 {
-        range 10.29.0.2 10.29.2.189;
-        option routers 10.29.0.1;
-        option broadcast-address 10.29.3.255;
-        option domain-name-servers 10.29.7.130;
+subnet 192.207.0.0 netmask 255.255.252.0 {
+        range 192.207.0.2 192.207.2.189;
+        option routers 192.207.0.1;
+        option broadcast-address 192.207.3.255;
+        option domain-name-servers 192.207.7.130;
         default-lease-time 360;
         max-lease-time 7200;
 }
-subnet 10.29.7.148 netmask 255.255.255.252 {
+subnet 192.207.7.148 netmask 255.255.255.252 {
 }
-subnet 10.29.4.0 netmask 255.255.254.0 {
-        range 10.29.4.2 10.29.5.45;
-        option routers 10.29.4.1;
-        option broadcast-address 10.29.5.255;
-        option domain-name-servers 10.29.7.130;
+subnet 192.207.4.0 netmask 255.255.254.0 {
+        range 192.207.4.2 192.207.5.45;
+        option routers 192.207.4.1;
+        option broadcast-address 192.207.5.255;
+        option domain-name-servers 192.207.7.130;
         default-lease-time 360;
         max-lease-time 7200;
 }
-subnet 10.29.6.0 netmask 255.255.255.0 {
-        range 10.29.6.2 10.29.6.201;
-        option routers 10.29.6.1;
-        option broadcast-address 10.29.6.255;
-        option domain-name-servers 10.29.7.130;
+subnet 192.207.6.0 netmask 255.255.255.0 {
+        range 192.207.6.2 192.207.6.201;
+        option routers 192.207.6.1;
+        option broadcast-address 192.207.6.255;
+        option domain-name-servers 192.207.7.130;
         default-lease-time 360;
         max-lease-time 7200;
 }
@@ -302,7 +302,7 @@ apt update && apt install isc-dhcp-relay -y
 
 Ubah konfigurasi `/etc/default/isc-dhcp-relay` menjadi
 ```
-SERVERS="10.29.7.131"
+SERVERS="192.207.7.131"
 INTERFACES=""
 OPTIONS=""
 ```
@@ -316,13 +316,13 @@ Kemudian restart `isc-dhcp-relay`
 ### Nomor 1
 Tambahkan rule berikut pada iptables **Foosha**
 ```
-iptables -t nat -A POSTROUTING -o eth0 -s 10.29.0.0/16 -j SNAT --to-source 192.168.122.2
+iptables -t nat -A POSTROUTING -o eth0 -s 192.207.0.0/16 -j SNAT --to-source 192.168.122.2
 ```
 **Penjelasan** :
 * `-t nat`: menggunakan tabel nat karena akan mengubah alamat paket
 * `-A POSTROUTING`: menambahkan chain POSTROUTING karena mengubah alamat paket setelah routing
 * `-o eth0`: interface tempat paket keluar (dalam hal ini ke NAT)
-* `-s 10.29.0.0/16`: alamat asal yang akan diubah
+* `-s 192.207.0.0/16`: alamat asal yang akan diubah
 * `-j SNAT`: menggunakan target SNAT untuk mengubah alamat asal
 * `--to-source 192.168.122.2`: mengubah alamat asal menjadi 192.168.122.2 (interface eth0 **Foosha**)
 
@@ -332,14 +332,14 @@ Untuk mengecek apakah sudah berhasil, bisa dengan cara `ping google.com` pada se
 ### Nomor 2
 Tambahkan rule berikut pada iptables **Foosha**
 ```
-iptables -A FORWARD -i eth0 -p tcp --dport 80 -d 10.29.7.128/29 -j DROP
+iptables -A FORWARD -i eth0 -p tcp --dport 80 -d 192.207.7.128/29 -j DROP
 ```
 **Penjelasan** :
 * `-A FORWARD`: menambahkan chain FORWARD karena berurusan dengan filtering
 * `-i eth0`: interface tempat paket masuk (dalam hal ini dari NAT)
 * `-p tcp`: menggunakan protokol TCP
 * `--dport 80`: menggunakan port 80 (HTTP)
-* `-d 10.29.7.128/29`: alamat tujuan paket, dalam hal ini adalah subnet A1 (DHCP dan DNS server)
+* `-d 192.207.7.128/29`: alamat tujuan paket, dalam hal ini adalah subnet A1 (DHCP dan DNS server)
 * `-j DROP`: men-DROP paket yang melalui filter
 
 ### Nomor 3
@@ -358,11 +358,11 @@ iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j
 ### Nomor 4
 Tambahkan rule berikut pada iptables di **Doriki**
 ```
-iptables -A INPUT -s 10.29.7.0/25,10.29.0.0/22 -m time --timestart 07:00 --timestop 15:00 --weekdays Mon,Tue,Wed,Thu -j ACCEPT
+iptables -A INPUT -s 192.207.7.0/25,192.207.0.0/22 -m time --timestart 07:00 --timestop 15:00 --weekdays Mon,Tue,Wed,Thu -j ACCEPT
 ```
 **Penjelasan** :
 * `-A INPUT`: menambahkan chain INPUT karena berhubungan dengan paket yang masuk
-* `-s 10.29.7.0/25,10.29.0.0/22`: mendefinisikan alamat asal (**Blueno** dan **Cipher**)
+* `-s 192.207.7.0/25,192.207.0.0/22`: mendefinisikan alamat asal (**Blueno** dan **Cipher**)
 * `-m time`: menggunakan matchcase *time*
 * `--timestart 07:00`: mendefinisikan waktu rule mulai, dalam hal ini 07:00
 * `--timestop 15:00`: mendefinisikan waktu rule berhenti, dalam hal ini 15:00
@@ -371,11 +371,11 @@ iptables -A INPUT -s 10.29.7.0/25,10.29.0.0/22 -m time --timestart 07:00 --times
 
 Setelah itu tambahkan rule default, yakni ketika rule di atas tidak dijalankan (tidak memenuhi matchcase)
 ```
-iptables -A INPUT -s 10.29.7.0/25,10.29.0.0/22 -j REJECT
+iptables -A INPUT -s 192.207.7.0/25,192.207.0.0/22 -j REJECT
 ```
 **Penjelasan** :
 * `-A INPUT`: menambahkan chain INPUT karena berhubungan dengan paket yang masuk
-* `-s 10.29.7.0/25,10.29.0.0/22`: mendefinisikan alamat asal (**Blueno** dan **Cipher**)
+* `-s 192.207.7.0/25,192.207.0.0/22`: mendefinisikan alamat asal (**Blueno** dan **Cipher**)
 * `-j REJECT`: menggunakan target REJECT ke semua paket yang melalui rule ini
 
 Untuk mengecek apakah berjalan atau tidak, lakukan ping pada **Blueno**
@@ -387,12 +387,12 @@ Lalu ganti tanggal atau waktunya, kemudian ping lagi
 ### Nomor 5
 Tambahkan rule berikut pada iptables di **Doriki**
 ```
-iptables -A INPUT -s 10.29.4.0/23,10.29.6.0/24 -m time --timestart 15:01 --timestop 23:59:59 -j ACCEPT
-iptables -A INPUT -s 10.29.4.0/23,10.29.6.0/24 -m time --timestart 00:00 --timestop 06:59 -j ACCEPT
+iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24 -m time --timestart 15:01 --timestop 23:59:59 -j ACCEPT
+iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24 -m time --timestart 00:00 --timestop 06:59 -j ACCEPT
 ```
 **Penjelasan** :
 * `-A INPUT`: menambahkan chain INPUT karena berhubungan dengan paket yang masuk
-* `-s 10.29.4.0/23,10.29.6.0/24`: mendefinisikan alamat asal (**Elena** dan **Fukurou**)
+* `-s 192.207.4.0/23,192.207.6.0/24`: mendefinisikan alamat asal (**Elena** dan **Fukurou**)
 * `-m time`: menggunakan matchcase *time*
 * `--timestart 15:01`: mendefinisikan waktu rule mulai, dalam hal ini 15:00
 * `--timestop 23:59:59`: mendefinisikan waktu rule berhenti, dalam hal ini 23:59:59
@@ -402,11 +402,11 @@ iptables -A INPUT -s 10.29.4.0/23,10.29.6.0/24 -m time --timestart 00:00 --times
 
 Setelah itu tambahkan rule default, yakni ketika rule di atas tidak dijalankan (tidak memenuhi matchcase)
 ```
-iptables -A INPUT -s 10.29.4.0/23,10.29.6.0/24 -j REJECT
+iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24 -j REJECT
 ```
 **Penjelasan** :
 * `-A INPUT`: menambahkan chain INPUT karena berhubungan dengan paket yang masuk
-* `-s 10.29.4.0/23,10.29.6.0/24`: mendefinisikan alamat asal (**Elena** dan **Fukurou**)
+* `-s 192.207.4.0/23,192.207.6.0/24`: mendefinisikan alamat asal (**Elena** dan **Fukurou**)
 * `-j REJECT`: menggunakan target REJECT ke semua paket yang melalui rule ini
 
 Untuk mengecek apakah berjalan atau tidak, lakukan ping pada **Elena**
@@ -420,7 +420,7 @@ Install bind9 pada **Doriki**
 ```bash
 apt update && apt install bind9 -y
 ```
-Buat domain baru pada **Doriki** yang mengarah ke IP random (dalam hal ini 10.29.7.140)
+Buat domain baru pada **Doriki** yang mengarah ke IP random (dalam hal ini 192.207.7.140)
 ```
 $TTL    604800
 @       IN      SOA     jarkom2021.com. root.jarkom2021.com. (
@@ -431,7 +431,7 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      jarkom2021.com.
-@       IN      A       10.29.7.140
+@       IN      A       192.207.7.140
 ```
 
 Tambahkan zone pada **Doriki**
@@ -444,29 +444,29 @@ zone "jarkom2021.com" {
 
 Tambahkan rule pada **Guanhao** seperti berikut
 ```
-iptables -t nat -A PREROUTING -d 10.29.7.140 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 10.29.7.138
+iptables -t nat -A PREROUTING -d 192.207.7.140 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.207.7.138
 ```
 **Penjelasan** :
 * `-t nat`: menggunakan tabel NAT karena akan merubah alamat paket
 * `-A PREROUTING`: menggunakan chain PREROUTING karena mengubah alamat sebelum routing
-* `-d 10.29.7.140`: mendefinisikan alamat, dalam hal ini 10.29.7.140
+* `-d 192.207.7.140`: mendefinisikan alamat, dalam hal ini 192.207.7.140
 * `-m statistic`: menggunakan matchcase *statistic*
 * `--mode nth`: menggunakan mode *nth*
 * `--every 2`: menerapkan rule setiap 2 paket
 * `--packet 0`: mengambil paket ke-1 dari 2 paket yang melalui rule
 * `-j DNAT`: menggunakan target DNAT untuk mengubah alamat tujuan paket
-* `--to-destination 10.29.7.138`: mengubah alamat paket menjadi 10.29.7.138 (**Jorge**)
+* `--to-destination 192.207.7.138`: mengubah alamat paket menjadi 192.207.7.138 (**Jorge**)
 
 Tambahkan rule default atau ketika rule di atas tidak dijalankan
 ```
-iptables -t nat -A PREROUTING -d 10.29.7.140 -j DNAT --to-destination 10.29.7.139
+iptables -t nat -A PREROUTING -d 192.207.7.140 -j DNAT --to-destination 192.207.7.139
 ```
 **Penjelasan** :
 * `-t nat`: menggunakan tabel NAT karena akan merubah alamat paket
 * `-A PREROUTING`: menggunakan chain PREROUTING karena mengubah alamat sebelum routing
-* `-d 10.29.7.140`: mendefinisikan alamat, dalam hal ini 10.29.7.140
+* `-d 192.207.7.140`: mendefinisikan alamat, dalam hal ini 192.207.7.140
 * `-j DNAT`: menggunakan target DNAT untuk mengubah alamat tujuan paket
-* `--to-destination 10.29.7.139`: mengubah alamat paket menjadi 10.29.7.138 (**Maingate**)
+* `--to-destination 192.207.7.139`: mengubah alamat paket menjadi 192.207.7.138 (**Maingate**)
 
 Untuk mengecek jalan tidaknya firewall, lakukan ping ke **jarkom2021.com**
 ![6-client1](images/6-client1.png)
