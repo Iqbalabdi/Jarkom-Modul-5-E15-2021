@@ -2,102 +2,125 @@
 Kelompok E15 : M Iqbal Abdi - 05111940000151
 
 ## Prerequisites
-**(A)** Buat topologi jaringan menjadi seperti ini.
-![topologi](images/topologi.png)
-Dengan keterangan :
-* Doriki adalah DNS Server
-* Jipangu adalah DHCP Server
-* Maingate dan Jorge adalah Web Server
-* Jumlah Host pada Blueno adalah 100 host
-* Jumlah Host pada Cipher adalah 700 host
-* Jumlah Host pada Elena adalah 300 host
-* Jumlah Host pada Fukurou adalah 200 host
+**(A)** Buat topologi dulu gan
+![image](https://user-images.githubusercontent.com/75016595/145771100-f873c4df-884f-4f51-ab32-b5067eb68648.png)
+Keterangan :
+- Doriki adalah DNS Server
+- Jipangu adalah DHCP Server
+- Maingate dan Jorge adalah Web Server
+- Jumlah Host pada Blueno adalah 100 host
+- Jumlah Host pada Cipher adalah 700 host
+- Jumlah Host pada Elena adalah 300 host
+- Jumlah Host pada Fukurou adalah 200 host
+
+### Subnetting (VLSM)
+
+| Host | Jumlah | Network ID | Broadcast | Netmask
+| ------------- | ------------- | ------------- | ------------- | ------------- | 
+| CIPHER | 701 | 192.207.0.0 | 192.207.3.255 | 255.255.252.0 |
+| ELENA | 301 | 192.207.4.0 | 192.207.5.255 | 255.255.254.0 |
+| FUKUROU | 201 | 192.207.6.0 | 192.207.6.255 | 255.255.255.0 |
+| BLUENO | 101 | 192.207.7.0 | 192.207.7.127 | 255.255.255.128 |
+| WATER7-SERVER | 3 | 192.207.7.128 | 192.207.7.135 | 255.255.255.248 |
+| GUANHAO-SERVER | 3 | 192.207.7.136 | 192.207.7.143 | 255.255.255.248 |
+| WATER7-FOOSHA | 2 | 192.207.7.144 | 192.207.7.147 | 255.255.255.252 |
+| GUANHAO-FOOSHA | 2 | 192.207.7.148 | 192.207.7.151 | 255.255.255.25 |  
 
 * **Foosha**
 ```
 auto eth0
 iface eth0 inet static
-address 192.168.122.2
-netmask 255.255.255.0
-gateway 192.168.122.1
+         address 192.168.122.2
+         netmask 255.255.255.252
+         gateway 192.168.122.1
+
 auto eth1
 iface eth1 inet static
-address 192.207.7.145
-netmask 255.255.255.252
+	address 192.207.8.1
+	netmask 255.255.255.252
+
 auto eth2
 iface eth2 inet static
-address 192.207.7.149
-netmask 255.255.255.252
+	address 192.207.20.1
+	netmask 255.255.255.252
 ```
 * **Water7**
 ```
 auto eth0
 iface eth0 inet static
-address 192.207.7.146
-netmask 255.255.255.252
+	address 192.207.8.2
+	netmask 255.255.255.252
+	gateway 192.207.8.1
+
 auto eth1
 iface eth1 inet static
-address 192.207.7.1
-netmask 255.255.255.128
+	address 192.207.4.1
+	netmask 255.255.255.128
+
 auto eth2
 iface eth2 inet static
-address 192.207.0.1
-netmask 255.255.252.0
+	address 192.207.0.1
+	netmask 255.255.252.0
+
 auto eth3
 iface eth3 inet static
-address 192.207.7.129
-netmask 255.255.255.248
+	address 192.207.4.129
+	netmask 255.255.255.248
 ```
 * **Guanhao**
 ```
 auto eth0
 iface eth0 inet static
-address 192.207.7.150
-netmask 255.255.255.252
+	address 192.207.20.2
+	netmask 255.255.255.252
+	gateway 192.207.20.1
+
 auto eth1
 iface eth1 inet static
-address 192.207.4.1
-netmask 255.255.254.0
+	address 192.207.16.1
+	netmask 255.255.254.0
+
 auto eth2
 iface eth2 inet static
-address 192.207.6.1
-netmask 255.255.255.0
+	address 192.207.19.1
+	netmask 255.255.255.248
+
 auto eth3
 iface eth3 inet static
-address 192.207.7.137
-netmask 255.255.255.248
-```
-* **Jipangu**
-```
-auto eth0
-iface eth0 inet static
-address 192.207.7.131
-netmask 255.255.255.248
-gateway 192.207.7.129
+	address 192.207.18.1
+	netmask 255.255.255.0
 ```
 * **Doriki**
 ```
 auto eth0
 iface eth0 inet static
-address 192.207.7.130
-netmask 255.255.255.248
-gateway 192.207.7.129
+        address 192.207.4.130
+	netmask 255.255.255.248
+	gateway 192.207.4.129
+```
+* **Jipangu**
+```
+auto eth0
+iface eth0 inet static
+	address 192.207.4.131
+	netmask 255.255.255.248
+	gateway 192.207.4.129
 ```
 * **Jorge**
 ```
 auto eth0
 iface eth0 inet static
-address 192.207.7.138
-netmask 255.255.255.248
-gateway 192.207.7.137
+	address 192.207.19.2
+	netmask 255.255.255.248
+	gateway 192.207.19.1
 ```
 * **Maingate**
 ```
 auto eth0
 iface eth0 inet static
-address 192.207.7.139
-netmask 255.255.255.248
-gateway 192.207.7.137
+	address 192.207.19.3
+	netmask 255.255.255.248
+	gateway 192.207.19.1
 ```
 * **Blueno, Cipher, Elena, dan Fukurou**
 ```
