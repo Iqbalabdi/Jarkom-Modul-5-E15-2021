@@ -31,31 +31,31 @@ Keterangan :
 ```
 auto eth0
 iface eth0 inet static
-         address 192.168.122.2
-         netmask 255.255.255.252
-         gateway 192.168.122.1
+	address 192.168.122.2
+	netmask 255.255.255.252
+        gateway 192.168.122.1
 
 auto eth1
 iface eth1 inet static
-	address 192.207.8.1
+	address 192.207.7.145
 	netmask 255.255.255.252
 
 auto eth2
 iface eth2 inet static
-	address 192.207.20.1
+	address 192.207.7.149
 	netmask 255.255.255.252
 ```
 * **Water7**
 ```
 auto eth0
 iface eth0 inet static
-	address 192.207.8.2
+	address 192.207.7.146
 	netmask 255.255.255.252
-	gateway 192.207.8.1
+        gateway 192.207.7.145
 
 auto eth1
 iface eth1 inet static
-	address 192.207.4.1
+	address 192.207.7.1
 	netmask 255.255.255.128
 
 auto eth2
@@ -65,63 +65,68 @@ iface eth2 inet static
 
 auto eth3
 iface eth3 inet static
-	address 192.207.4.129
+	address 192.207.7.129
 	netmask 255.255.255.248
+
 ```
 * **Guanhao**
 ```
 auto eth0
 iface eth0 inet static
-	address 192.207.20.2
+	address 192.207.7.150
 	netmask 255.255.255.252
-	gateway 192.207.20.1
+        gateway 192.207.7.149
 
 auto eth1
 iface eth1 inet static
-	address 192.207.16.1
+	address 192.207.4.1
 	netmask 255.255.254.0
 
 auto eth2
 iface eth2 inet static
-	address 192.207.19.1
+	address 192.207.7.137
 	netmask 255.255.255.248
 
 auto eth3
 iface eth3 inet static
-	address 192.207.18.1
+	address 192.207.6.1
 	netmask 255.255.255.0
 ```
 * **Doriki**
 ```
 auto eth0
 iface eth0 inet static
-        address 192.207.4.130
+	address 192.207.7.130
 	netmask 255.255.255.248
-	gateway 192.207.4.129
+	gateway 192.207.7.129
+	up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 * **Jipangu**
 ```
 auto eth0
 iface eth0 inet static
-	address 192.207.4.131
+	address 192.207.7.131
 	netmask 255.255.255.248
-	gateway 192.207.4.129
+	gateway 192.207.7.129
+	up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 * **Jorge**
 ```
 auto eth0
 iface eth0 inet static
-	address 192.207.19.2
+	address 192.207.7.138
 	netmask 255.255.255.248
-	gateway 192.207.19.1
+	gateway 192.207.7.137
+	up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 * **Maingate**
 ```
 auto eth0
 iface eth0 inet static
-	address 192.207.19.3
+	address 192.207.7.139
 	netmask 255.255.255.248
-	gateway 192.207.19.1
+	gateway 192.207.7.137
+	up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 * **Blueno, Cipher, Elena, dan Fukurou**
 ```
@@ -217,14 +222,10 @@ OPTIONS=""
 
 Kemudian restart `isc-dhcp-relay`
 
-## Soal
-**(1)** Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MASQUERADE. **(2)** Kalian diminta untuk mendrop semua akses HTTP dari luar Topologi kalian pada server yang merupakan DHCP Server dan DNS Server demi menjaga keamanan. **(3)** Karena kelompok kalian maksimal terdiri dari 3 orang. Luffy meminta kalian untuk membatasi DHCP dan DNS Server hanya boleh menerima maksimal 3 koneksi ICMP secara bersamaan menggunakan iptables, selebihnya didrop. Kemudian kalian diminta untuk membatasi akses ke Doriki yang berasal dari subnet Blueno, Cipher, Elena dan Fukuro dengan beraturan sebagai berikut: **(4)** Akses dari subnet Blueno dan Cipher hanya diperbolehkan pada pukul 07.00 - 15.00 pada hari Senin sampai Kamis. **(5)** Akses dari subnet Elena dan Fukuro hanya diperbolehkan pada pukul 15.01 hingga pukul 06.59 setiap harinya. Selain itu di reject. **(6)** Karena kita memiliki 2 Web Server, Luffy ingin Guanhao disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada Jorge dan Maingate
-
-## Jawaban
 ### Nomor 1
 Tambahkan rule berikut pada iptables **Foosha**
 ```
-iptables -t nat -A POSTROUTING -o eth0 -s 192.207.0.0/16 -j SNAT --to-source 192.168.122.2
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source 192.168.122.2 -s 192.207.0.0/16
 ```
 **Penjelasan** :
 * `-t nat`: menggunakan tabel nat karena akan mengubah alamat paket
@@ -235,7 +236,6 @@ iptables -t nat -A POSTROUTING -o eth0 -s 192.207.0.0/16 -j SNAT --to-source 192
 * `--to-source 192.168.122.2`: mengubah alamat asal menjadi 192.168.122.2 (interface eth0 **Foosha**)
 
 Untuk mengecek apakah sudah berhasil, bisa dengan cara `ping google.com` pada setiap node.
-![ping-google](images/ping-google.png)
 
 ### Nomor 2
 Tambahkan rule berikut pada iptables **Foosha**
@@ -286,17 +286,10 @@ iptables -A INPUT -s 192.207.7.0/25,192.207.0.0/22 -j REJECT
 * `-s 192.207.7.0/25,192.207.0.0/22`: mendefinisikan alamat asal (**Blueno** dan **Cipher**)
 * `-j REJECT`: menggunakan target REJECT ke semua paket yang melalui rule ini
 
-Untuk mengecek apakah berjalan atau tidak, lakukan ping pada **Blueno**
-![4-fail](images/4-failed.png)
-
-Lalu ganti tanggal atau waktunya, kemudian ping lagi
-![4-succeed](images/4-succeed.png)
-
 ### Nomor 5
 Tambahkan rule berikut pada iptables di **Doriki**
 ```
-iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24 -m time --timestart 15:01 --timestop 23:59:59 -j ACCEPT
-iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24 -m time --timestart 00:00 --timestop 06:59 -j ACCEPT
+iptables -A INPUT -s 192.207.4.0/23,192.207.6.0/24  -m time --timestart 07:00 --timestop 15:00 -j REJECT
 ```
 **Penjelasan** :
 * `-A INPUT`: menambahkan chain INPUT karena berhubungan dengan paket yang masuk
@@ -331,28 +324,29 @@ apt update && apt install bind9 -y
 Buat domain baru pada **Doriki** yang mengarah ke IP random (dalam hal ini 192.207.7.140)
 ```
 $TTL    604800
-@       IN      SOA     jarkom2021.com. root.jarkom2021.com. (
+@       IN      SOA     jarkom.com. root.jarkom.com. (
                      2021120701         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      jarkom2021.com.
+@       IN      NS      jarkom.com.
 @       IN      A       192.207.7.140
 ```
 
 Tambahkan zone pada **Doriki**
 ```
-zone "jarkom2021.com" {
+zone "jarkom.com" {
         type master;
-        file "/etc/bind/jarkom/jarkom2021.com";
+        file "/etc/bind/jarkom/jarkom.com";
 };
 ```
 
 Tambahkan rule pada **Guanhao** seperti berikut
 ```
-iptables -t nat -A PREROUTING -d 192.207.7.140 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.207.7.138
+iptables -t nat -A PREROUTING -d 192.207.7.140 -m state --state NEW -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.207.7.138
+iptables -t nat -A PREROUTING -d 192.207.7.140 -j DNAT --to-destination 192.207.7.139
 ```
 **Penjelasan** :
 * `-t nat`: menggunakan tabel NAT karena akan merubah alamat paket
@@ -376,14 +370,8 @@ iptables -t nat -A PREROUTING -d 192.207.7.140 -j DNAT --to-destination 192.207.
 * `-j DNAT`: menggunakan target DNAT untuk mengubah alamat tujuan paket
 * `--to-destination 192.207.7.139`: mengubah alamat paket menjadi 192.207.7.138 (**Maingate**)
 
-Untuk mengecek jalan tidaknya firewall, lakukan ping ke **jarkom2021.com**
-![6-client1](images/6-client1.png)
-
-Ping juga dengan client lainnya
-![6-client2](images/6-client2.png)
-
 Untuk mengecek apkah berhasil diubah alamat tujuannya, jalankan `tcpdump` pada **Jorge** dan **Maingate**
 * **Jorge**
-![jorge](images/jorge.png)
+![image](https://user-images.githubusercontent.com/75016595/145813059-5251a69c-78db-4e42-a046-e6742a60b5ab.png)
 * **Maingate**
-![maingate](images/maingate.png)
+![image](https://user-images.githubusercontent.com/75016595/145813258-7b86ed83-650f-46a1-b1e6-2e1097f99e4d.png)
