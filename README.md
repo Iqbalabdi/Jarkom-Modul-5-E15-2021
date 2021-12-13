@@ -1,4 +1,5 @@
 # Jarkom-Modul-5-E15-2021
+Lapres Praktikum Jarkom Modul 5  
 Kelompok E15 : M Iqbal Abdi - 05111940000151
 
 ## Prerequisites
@@ -128,126 +129,16 @@ auto eth0
 iface eth0 inet dhcp
 ```
 
-**(B)** Lakukan subnetting dengan metode VLSM atau CIDR. Untuk soal ini, saya menggunakan VLSM sehingga didapatkan subnet sebagai berikut
-<table>
-    <tbody>
-        <tr>
-            <td rowspan = 3><strong>A1</strong></td>
-            <td>Network ID</td>
-            <td>192.207.7.128</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.248</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.7.135</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A2</strong></td>
-            <td>Network ID</td>
-            <td>192.207.7.0</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.128</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.7.127</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A3</strong></td>
-            <td>Network ID</td>
-            <td>192.207.0.0</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.252.0</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.3.255</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A4</strong></td>
-            <td>Network ID</td>
-            <td>192.207.7.144</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.252</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.7.147</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A5</strong></td>
-            <td>Network ID</td>
-            <td>192.207.7.148</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.252</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.7.151</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A6</strong></td>
-            <td>Network ID</td>
-            <td>192.207.4.0</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.254.0</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.5.255</td>
-        </tr><tr>
-            <td rowspan = 3><strong>A7</strong></td>
-            <td>Network ID</td>
-            <td>192.207.6.0</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.0</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.6.255</td>
-        </tr>
-        <tr>
-            <td rowspan = 3><strong>A8</strong></td>
-            <td>Network ID</td>
-            <td>192.207.7.136</td>
-        </tr>
-        <tr>
-            <td>Netmask</td>
-            <td>255.255.255.248</td>
-        </tr>
-        <tr>
-            <td>Broadcast Address</td>
-            <td>192.207.7.143</td>
-        </tr>
-    </tbody>
-</table>
-
-**(C)** Lalu lakukan routing juga
+**(C)** Routing
 * **Foosha**
 ```
 route add -net 192.207.7.128 netmask 255.255.255.248 gw 192.207.7.146
 route add -net 192.207.7.0 netmask 255.255.255.128 gw 192.207.7.146
 route add -net 192.207.0.0 netmask 255.255.252.0 gw 192.207.7.146
-route add -net 192.207.7.144 netmask 255.255.255.252 gw 192.207.7.146
-route add -net 192.207.7.148 netmask 255.255.255.252 gw 192.207.7.150
+
 route add -net 192.207.4.0 netmask 255.255.254.0 gw 192.207.7.150
-route add -net 192.207.6.0 netmask 255.255.255.0 gw 192.207.7.150
 route add -net 192.207.7.136 netmask 255.255.255.248 gw 192.207.7.150
+route add -net 192.207.6.0 netmask 255.255.255.0 gw 192.207.7.150
 ```
 * **Water7**
 ```
@@ -277,39 +168,33 @@ Kemudian, tambahkan konfigurasi DHCP pada `/etc/dhcp/dhcpd.conf` menjadi seperti
 ```
 subnet 192.207.7.128 netmask 255.255.255.248 {
 }
+
 subnet 192.207.7.0 netmask 255.255.255.128 {
-        range 192.207.7.2 192.207.7.101;
-        option routers 192.207.7.1;
-        option broadcast-address 192.207.7.127;
-        option domain-name-servers 192.207.7.130;
-        default-lease-time 360;
-        max-lease-time 7200;
+    range 192.207.7.2 192.207.7.126;
+    option routers 192.207.7.1;
+    option broadcast-address 192.207.7.127;
+    option domain-name-servers 192.207.7.130;
 }
+
 subnet 192.207.0.0 netmask 255.255.252.0 {
-        range 192.207.0.2 192.207.2.189;
-        option routers 192.207.0.1;
-        option broadcast-address 192.207.3.255;
-        option domain-name-servers 192.207.7.130;
-        default-lease-time 360;
-        max-lease-time 7200;
+    range 192.207.0.2 192.207.3.254;
+    option routers 192.207.0.1;
+    option broadcast-address 192.207.3.255;
+    option domain-name-servers 192.207.7.130;
 }
-subnet 192.207.7.148 netmask 255.255.255.252 {
-}
-subnet 192.207.4.0 netmask 255.255.254.0 {
-        range 192.207.4.2 192.207.5.45;
-        option routers 192.207.4.1;
-        option broadcast-address 192.207.5.255;
-        option domain-name-servers 192.207.7.130;
-        default-lease-time 360;
-        max-lease-time 7200;
-}
+
 subnet 192.207.6.0 netmask 255.255.255.0 {
-        range 192.207.6.2 192.207.6.201;
-        option routers 192.207.6.1;
-        option broadcast-address 192.207.6.255;
-        option domain-name-servers 192.207.7.130;
-        default-lease-time 360;
-        max-lease-time 7200;
+    range 192.207.6.2 range 192.207.6.254;
+    option routers 192.207.6.1;
+    option broadcast-address 192.207.6.255;
+    option domain-name-servers 192.207.7.130;
+}
+
+subnet 192.207.4.0 netmask 255.255.254.0 {
+    range 192.207.4.2 192.207.5.254;
+    option routers 192.207.4.1;
+    option broadcast-address 192.207.5.255;
+    option domain-name-servers 192.207.7.130;
 }
 ```
 
